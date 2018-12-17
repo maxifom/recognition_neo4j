@@ -1,7 +1,3 @@
-# USAGE
-# python recognize_faces_video.py --encodings encodings.pickle
-# python recognize_faces_video.py --encodings encodings.pickle --output output/jurassic_park_trailer_output.avi --display 0
-
 import os
 from PIL import Image
 # import the necessary packages
@@ -9,6 +5,7 @@ from imutils.video import VideoStream
 from _neo4j import *
 # from main import event
 from event import event
+# to use CNN change method to 'cnn' and install dlib with CUDA support
 def StartRecognition(display=1, method='hog'):
     DeleteGraph()
     vs = VideoStream(src=0).start()
