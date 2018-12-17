@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>People</h1>
+{% for person in people %}
+<div>
+    <h3><a href="/show/{{person['name']}}">
+        {{person['name']}}
+    </a></h3>
+</div>
+{% endfor %}
+</body>
+</html>

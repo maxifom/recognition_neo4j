@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Unknown faces</h1>
+{% for image in images %}
+<div>
+    <h3>{{image.split('_')[0] +'_'+ image.split('_')[1]}}</h3>
+    <img src="/getImage/{{image}}" alt="">
+    <form action="changeName" method="POST">
+        <label for="name">Change name</label>
+        <input type="text" id="name" name="new_name" value="" placeholder="new name" required>
+        <input name="old_name" type="hidden" value="{{image.split('_')[0] +'_'+ image.split('_')[1]}}">
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="delete" method="POST">
+        <input name="name" type="hidden" value="{{image.split('_')[0] +'_'+ image.split('_')[1]}}">
+        <input type="submit" value="Delete">
+    </form>
+</div>
+{% endfor %}
+</body>
+</html>

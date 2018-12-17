@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{person['name']}}</h1>
+<h3>WALKS_WITH</h3>
+{% for r in rel %}
+<p>{{r.end_node['name']}} (W:{{r['weight']}})</p>
+{% endfor %}
+</body>
+</html>
